@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    mysql:
+        image: blank-project.mysql
+        container_name: blank-project.mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: 'blank_project'
+            MYSQL_DATABASE: 'blank_project'
+            MYSQL_USER: 'blank_project'
+            MYSQL_PASSWORD: 'blank_project'
+        ports:
+            - "3305:3306"
+        networks:
+            blank_project_net:
+                ipv4_address: 172.50.0.3
+        tty: true
+
+networks:
+    blank_project_net:
+        external: true
